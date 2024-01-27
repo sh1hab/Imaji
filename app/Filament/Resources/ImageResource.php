@@ -33,7 +33,7 @@ class ImageResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('keyword')->required()->live()
+                Forms\Components\TextInput::make('keyword')->required()
             ]);
     }
 
@@ -51,7 +51,7 @@ class ImageResource extends Resource
                         'pending' => 'info',
                         'processing' => 'warning',
                         'completed' => 'success',
-                        'rejected' => 'danger',
+                        'failed' => 'danger',
                     }),
                 Tables\Columns\TextColumn::make('progress')
                     ->searchable(),
@@ -94,7 +94,6 @@ class ImageResource extends Resource
                     ->label('Image')
                     ->width(850)
                     ->height(800)
-                    ->stacked()
                 ,
                 Infolists\Components\TextEntry::make('created_at')
                     ->label('Created At')

@@ -2,7 +2,6 @@
 
 namespace App\Observers;
 
-use App\Jobs\AiGenerateImage;
 use App\Jobs\AiGeneratePrompt;
 use App\Models\Image;
 use App\Services\OpenAi\ChatService;
@@ -27,7 +26,6 @@ class ImageObserver implements ShouldHandleEventsAfterCommit
      */
     public function created(Image $image): void
     {
-//        AiGenerateImage::dispatch($image);
         AiGeneratePrompt::dispatch($image);
     }
 }

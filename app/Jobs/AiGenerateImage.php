@@ -3,9 +3,7 @@
 namespace App\Jobs;
 
 use App\Models\Image;
-use App\Services\Interfaces\ChatServiceInterface;
 use App\Services\Interfaces\ImageServiceInterface;
-use App\Services\OpenAi\ChatService;
 use App\Services\OpenAi\ImageService;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -30,11 +28,10 @@ class AiGenerateImage implements ShouldQueue
     public function __construct(protected Image $image){}
 
     /**
-     * @param ChatService $chatService
      * @param ImageService $imageService
      * @return CreateResponse
      */
-    public function handle(ChatServiceInterface $chatService, ImageServiceInterface $imageService): CreateResponse
+    public function handle(ImageServiceInterface $imageService): CreateResponse
     {
         $response = $imageService->generateImage($this->image->prompt);
 

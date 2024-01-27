@@ -3,14 +3,13 @@
 namespace App\Services\OpenAi;
 
 use OpenAI\Laravel\Facades\OpenAI;
-use App\Jobs\AiGenerateImage;
-use Illuminate\Http\Request;
-use App\Models\Image;
 use App\Services\Interfaces\ChatServiceInterface;
 
 class ChatService implements ChatServiceInterface
 {
     /**
+     * Generates prompt with user keyword
+     *
      * @param mixed $userKeyword
      * @return string|null
      */

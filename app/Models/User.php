@@ -47,6 +47,8 @@ class User extends Authenticatable
     ];
 
     /**
+     * Image Has Many User
+     *
      * @return HasMany
      */
     public function medias()

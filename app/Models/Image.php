@@ -34,6 +34,8 @@ class Image extends Model
     }
 
     /**
+     * Image belongs to User
+     *
      * @return BelongsTo
      */
     public function user(): BelongsTo

@@ -9,6 +9,8 @@ use App\Services\Interfaces\ImageServiceInterface;
 class ImageService implements ImageServiceInterface
 {
     /**
+     * Generate Image based on user prompt
+     *
      * @param string $prompt
      * @return CreateResponse
      */
